@@ -117,7 +117,7 @@
                 autoplay
                 preload="auto"
               >
-                <source src="video.mp4" type="video/mp4" />
+                <source src="https://res.cloudinary.com/ddxladfzg/video/upload/v1768328895/video_lwrhrn.mp4" type="video/mp4" />
               </video>
 
               <!-- Оверлей как в тиктоке -->
@@ -202,7 +202,7 @@
       <div class="grid">
         <div class="reel">
           <video class="reel__video" playsinline muted loop autoplay preload="metadata">
-            <source src="Video Project 1.mp4" type="video/mp4" />
+            <source src="https://res.cloudinary.com/ddxladfzg/video/upload/v1768328925/Video_Project_1_csna6t.mp4" type="video/mp4" />
           </video>
 
           <div class="reel__badge">TOP</div>
@@ -214,7 +214,7 @@
 
         <div class="reel">
           <video class="reel__video" playsinline muted loop autoplay preload="metadata">
-            <source src="Video Project 2.mp4" type="video/mp4" />
+            <source src="https://res.cloudinary.com/ddxladfzg/video/upload/v1768328929/Video_Project_2_sza9mt.mp4" type="video/mp4" />
           </video>
 
           <div class="reel__badge reel__badge--cyan">NEW</div>
@@ -226,7 +226,7 @@
 
         <div class="reel">
           <video class="reel__video" playsinline muted loop autoplay preload="metadata">
-            <source src="Video Project 3.mp4" type="video/mp4" />
+            <source src="https://res.cloudinary.com/ddxladfzg/video/upload/v1768328998/Video_Project_3_rxbb2g.mp4" type="video/mp4" />
           </video>
 
           <div class="reel__badge">HOT</div>
@@ -238,7 +238,7 @@
 
         <div class="reel">
           <video class="reel__video" playsinline muted loop autoplay preload="metadata">
-            <source src="Video Project 4.mp4" type="video/mp4" />
+            <source src="https://res.cloudinary.com/ddxladfzg/video/upload/v1768328919/Video_Project_4_maxz9w.mp4" type="video/mp4" />
           </video>
 
           <div class="reel__badge reel__badge--cyan">VIP</div>
@@ -321,43 +321,15 @@
       });
     });
 
-    // Video upload
-    const input = document.getElementById("videoInput");
+    // Sound toggle (главное видео)
     const video = document.getElementById("previewVideo");
-    const empty = document.getElementById("videoEmpty");
     const soundBtn = document.getElementById("soundBtn");
 
-    input.addEventListener("change", () => {
-      const file = input.files?.[0];
-      if (!file) return;
-
-      const url = URL.createObjectURL(file);
-      video.src = url;
-
-      empty.style.display = "none";
-
-      // Запуск после выбора файла
-      video.muted = true;
-      video.play().catch(() => {
-        // На некоторых устройствах может попросить действие пользователя
-      });
-    });
-
-    // Toggle sound
     soundBtn.addEventListener("click", () => {
       video.muted = !video.muted;
-      soundBtn.textContent = video.muted ? "Включить звук" : "Выключить звук";
-      if (!video.paused) return;
+      soundBtn.textContent = video.muted ? "Ovozni yoqish" : "Ovozni o'chirish";
       video.play().catch(() => {});
     });
-
-    // Fake download
-    function fakeDownload(e){
-      e.preventDefault();
-      const hint = document.getElementById("downloadHint");
-      hint.textContent = "✅ Скачивание (демо). Поставь сюда реальную ссылку на файл.";
-      return false;
-    }
   </script>
 </body>
 </html>
